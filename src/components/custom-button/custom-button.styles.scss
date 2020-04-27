@@ -9,14 +9,26 @@
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
+  font-family: inherit ;
   font-weight: bolder;
   border: none;
   cursor: pointer;
+
 
   &:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
+  }
+
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: whitesmoke;
+    margin-left: 1.5rem;
+
+    &:hover {
+      background-color: #357ae8;
+      border: none;
+    }
   }
 }
