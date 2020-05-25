@@ -7,6 +7,7 @@ const INITIAL_STATE = {
 }
 
 const cardReducer = (state = INITIAL_STATE, action ) => {
+  console.log('cardReducer ttt, with action', action);
   switch(action.type) {
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {
