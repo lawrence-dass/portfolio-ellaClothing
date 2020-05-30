@@ -22,12 +22,12 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "env-cmd --file .env react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "prod": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "env-cmd --file .env yarn start",
-    "prod" : "env-cmd --file .env yarn build"
+    "dev": "env-cmd --file .env yarn run start",
+    "build" : "yarn run prod"
   },
   "eslintConfig": {
     "extends": "react-app"
