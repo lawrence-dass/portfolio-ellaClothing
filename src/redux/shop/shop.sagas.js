@@ -6,7 +6,6 @@ import { fetchCollectionsSuccess, fetchCollectionsFailure } from './shop.actions
 import shopActionTypes from './shop.types';
 
 export function* fetchCollectionsAsync () {
-  yield console.log(" I am fired ")
 
   // convert promise based to redux sagas
   // collectionRef.get().then( snapshot => {
