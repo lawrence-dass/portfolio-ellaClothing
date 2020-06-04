@@ -31,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "env-cmd --file .env yarn run start",
-    "build": "env-cmd --file .env yarn run prod"
+    "build": "yarn run prod"
   },
   "eslintConfig": {
     "extends": "react-app"
