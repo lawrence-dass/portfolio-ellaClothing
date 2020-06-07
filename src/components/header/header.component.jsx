@@ -22,6 +22,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       <LogoText>ella</LogoText>
     </LogoContainer>
     <OptionsContainer>
+      <OptionLink  to="/"> HOME </OptionLink>
       <OptionLink  to="/shop"> SHOP </OptionLink>
       <OptionLink  to="/shop"> CONTACT </OptionLink>
       {

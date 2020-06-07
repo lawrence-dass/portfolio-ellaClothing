@@ -41,7 +41,7 @@ export const OptionLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: rgba(37, 116, 169, 1);
+    color: rgba(117, 19, 93);
   }
 `;
 
