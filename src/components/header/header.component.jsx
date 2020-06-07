@@ -11,14 +11,10 @@ import { signOutStart } from '../../redux/user/user.action'
 
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, LogoText } from './header.styles';
 
-
-
-import './header.styles.scss';
-
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
-      <Logo className="logo"/>
+      <Logo/>
       <LogoText>ella</LogoText>
     </LogoContainer>
     <OptionsContainer>

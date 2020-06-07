@@ -10,13 +10,12 @@ const CollectionItem = ({ item, addItem }) => {
   return (
     <CollectionItemContainer>
       <BackgroundImage
-        className="image"
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       />
-      <CollectionFooterContainer className="collection-footer">
-        <NameContainer >{name}</NameContainer>
+      <CollectionFooterContainer>
+        <NameContainer>{name}</NameContainer>
         <PriceContainer >${price}</PriceContainer>
       </CollectionFooterContainer>
       <AddButton onClick={() => addItem(item)}inverted> Add to cart </AddButton>
