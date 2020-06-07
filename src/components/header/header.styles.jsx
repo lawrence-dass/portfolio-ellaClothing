@@ -12,10 +12,21 @@ export const HeaderContainer = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
-  height: 100%;
-  width: 70px;
-  padding: 25px;
+  display: flex;
+  align-items: center;
+  & span {
+    & p {
+      padding: 0 10px;
+      margin: 0;
+    }
+  }
 `;
+
+export const LogoText = styled.p`
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3rem;
+  padding-left: .5rem;
+`
 
 export const OptionsContainer = styled.div`
   width: 50%;
@@ -28,5 +39,9 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+
+  &:hover {
+    color: rgba(37, 116, 169, 1);
+  }
 `;
 

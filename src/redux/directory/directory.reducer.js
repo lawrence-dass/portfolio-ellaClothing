@@ -2,13 +2,13 @@ const INITIAL_STATE = {
   sections: [
     {
       title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      imageUrl: 'https://images.unsplash.com/photo-1542732057-3f3ee7446492?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
       id: 1,
       linkUrl: 'shop/hats',
     },
     {
       title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+      imageUrl: 'https://images.unsplash.com/photo-1512441547630-6ef146e5af13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80',
       id: 2,
       linkUrl: 'shop/jackets'
     },
@@ -20,14 +20,14 @@ const INITIAL_STATE = {
     },
     {
       title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      imageUrl: 'https://images.unsplash.com/photo-1536010447069-d2c8af80c584?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
       size: 'large',
       id: 4,
       linkUrl: 'shop/womens'
     },
     {
       title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      imageUrl: 'https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       size: 'large',
       id: 5,
       linkUrl: 'shop/mens'
