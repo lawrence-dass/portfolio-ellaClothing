@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 
@@ -36,12 +36,18 @@ export const OptionsContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const OptionLink = styled(Link)`
+export const OptionLink = styled(NavLink)`
   padding: 10px 15px;
-  cursor: pointer;
+  width: auto;
 
   &:hover {
     color: rgba(117, 19, 93);
   }
-`;
 
+  &.${props => props.activeClassName} {
+    color: blue;
+    font-size: 1.01rem;
+  }
+
+  transition: all .3s ease-in;
+`;

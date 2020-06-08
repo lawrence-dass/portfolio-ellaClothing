@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 
 import { addItem } from '../../redux/cart/cart.action';
 
 import { AddButton, CollectionItemContainer, BackgroundImage, CollectionFooterContainer, NameContainer, PriceContainer } from './collection-item.styles';
+
+import ItemPreview from '../item-preview/item-preview.component'
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
@@ -40,14 +42,9 @@ const CollectionItem = ({ item, addItem }) => {
       <AddButton onClick={(e) => handleAddItem(e,item)}inverted> Add to cart </AddButton>
     </CollectionItemContainer>
 
-    <Modal 
-           isOpen={modalState}
-           contentLabel="Modal Label"
-           onRequestClose={closeModal}
-        >
-    <button onClick={() => closeModal()}> test close </button>
-      <span>{modalState}</span>
-      </Modal>
+    <ItemPreview item={item} modalState={modalState} openModal={openModal} closeModal={closeModal} >
+
+    </ItemPreview>
 
     </div>
 

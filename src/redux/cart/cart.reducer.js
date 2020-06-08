@@ -1,5 +1,23 @@
 import CartActionTypes from './cart.types.js'
 import { addItemToCart, removeItemFromCart } from './cart.util'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content';
+
+
+const MySwal = withReactContent(Swal)
+
+
+const Toast = MySwal.mixin({
+  toast: true,
+  position: "bottom-right",
+  showConfirmButton: false,
+  timer: 1500,
+  timerProgressBar: true,
+  onOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
 
 const INITIAL_STATE = {
   hidden: true,
@@ -15,6 +33,10 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         hidden: !state.hidden
       }
     case CartActionTypes.ADD_ITEM:
+      Toast.fire({
+        icon: 'success',
+        title: `${action.payload.name} added to your cart.`
+      })
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload)
@@ -30,6 +52,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         cartItems: state.cartItems.filter(cartItem => cartItem.id !== action.payload.id)
       }
     case CartActionTypes.CLEAR_CART:
+
       return {
         ...state,
         cartItems: []
