@@ -6,13 +6,15 @@ import CollectionsOverviewContainer from '../../components/collection-overview/c
 import CollectionsPageContainer from '../collection/collection.container';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
+import { ShopContainer } from './shop.styles';
+
 const ShopPage = ({ fetchCollectionsStart, match }) => {
   useEffect(() => {
     fetchCollectionsStart();
   }, [fetchCollectionsStart]);
 
   return (
-    <div>
+    <ShopContainer>
       <Route
         exact
         path={`${match.path}`}
@@ -22,7 +24,7 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
         path={`${match.path}/:collectionId`}
         component={CollectionsPageContainer}
       />
-    </div>
+    </ShopContainer>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
 import { addItem } from '../../redux/cart/cart.action';
 
@@ -7,8 +8,26 @@ import { AddButton, CollectionItemContainer, BackgroundImage, CollectionFooterCo
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
+  const [ modalState, setModalState ] = React.useState(false);
+
+
+  const openModal = () => {
+    setModalState(true)
+  }
+
+
+  const closeModal = () => {
+    setModalState(false);
+  }
+
+  const handleAddItem = (e, item) => {
+    e.stopPropagation();
+    addItem(item);
+  }
+
   return (
-    <CollectionItemContainer>
+    <div>
+          <CollectionItemContainer onClick={() => openModal()}>
       <BackgroundImage
         style={{
           backgroundImage: `url(${imageUrl})`,
@@ -18,8 +37,20 @@ const CollectionItem = ({ item, addItem }) => {
         <NameContainer>{name}</NameContainer>
         <PriceContainer >${price}</PriceContainer>
       </CollectionFooterContainer>
-      <AddButton onClick={() => addItem(item)}inverted> Add to cart </AddButton>
+      <AddButton onClick={(e) => handleAddItem(e,item)}inverted> Add to cart </AddButton>
     </CollectionItemContainer>
+
+    <Modal 
+           isOpen={modalState}
+           contentLabel="Modal Label"
+           onRequestClose={closeModal}
+        >
+    <button onClick={() => closeModal()}> test close </button>
+      <span>{modalState}</span>
+      </Modal>
+
+    </div>
+
   );
 };
 

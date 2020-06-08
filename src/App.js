@@ -13,6 +13,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import { selectCurrentUser } from './redux/user/user.selector';
 import { checkUserSession } from './redux/user/user.action'
+import Contact from './pages/contact/contact.component';
 
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = ({ checkUserSession, currentUser }) => {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
+        <Route path='/contact' component={Contact} />
         <Route exact path='/checkout' component={CheckoutPage} />
         <Route exact path='/signin' render={() => currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />} />
       </Switch>
