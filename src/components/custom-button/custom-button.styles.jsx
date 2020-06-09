@@ -25,13 +25,13 @@ const invertedButtonStyles = css`
 `;
 
 const googleButtonStyles = css`
-    background-color: #4285f4;
+    background-color: #55abf4;
     color: whitesmoke;
     margin-left: 1.5rem;
     border: none;
 
     &:hover {
-      background-color: #357ae8;
+      background-color: #55aef4;
       border: none;
     }
 `;

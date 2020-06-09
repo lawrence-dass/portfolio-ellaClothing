@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const subColor = 'grey';
+const subColor = '#505050';
 const mainColor = 'black';
 
 const shrinkLabelStyles = css`
@@ -21,13 +21,13 @@ export const FormInputContainer = styled.input`
   background: none;
   background-color: white;
   color: ${subColor};
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid ${subColor};
+  border-bottom: 1px solid #98648b;
   margin: 25px 0;
   &:focus {
     outline: none;

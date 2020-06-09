@@ -6,6 +6,8 @@ import { ReactComponent as GoogleSignInIcon } from '../../assets/google.svg'
 import FormInput from '../form-input/form-input.component';
 import CustomButton from './../custom-button/custom-button.component';
 
+import './sign-in.styles.scss';
+
 import {
   googleSignInStart,
   emailSignInStart,
@@ -64,7 +66,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
             isGoogleSignIn
           > 
             <GoogleSignInContainer>
-              <GoogleSignInIcon /> <span> Sign In  </span> 
+              <GoogleSignInIcon className="googleSignInIcon" /> <span> Sign In  </span> 
             </GoogleSignInContainer>
           </CustomButton>
         </ButtonsBarContainer>
