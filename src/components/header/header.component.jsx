@@ -25,21 +25,17 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
     </LogoContainer>
     <OptionsContainer>
       <OptionLink exact={true} activeClassName="is-active" to="/">
-        {' '}
-        HOME{' '}
+        HOME
       </OptionLink>
       <OptionLink activeClassName="is-active" to="/shop">
-        {' '}
-        SHOP{' '}
+        SHOP
       </OptionLink>
       <OptionLink activeClassName="is-active" to="/contact">
-        {' '}
-        CONTACT{' '}
+        CONTACT
       </OptionLink>
       {currentUser ? (
         <OptionLink as="div" onClick={signOutStart}>
-          {' '}
-          SIGN OUT{' '}
+          SIGN OUT
         </OptionLink>
       ) : (
         <OptionLink to="/signin"> SIGN IN </OptionLink>

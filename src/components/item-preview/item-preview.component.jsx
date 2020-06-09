@@ -8,7 +8,6 @@ import { addItem } from '../../redux/cart/cart.action';
 import { AddButton } from './item-preview.styles';
 
 const ItemPreview = ({item, modalState, closeModal, addItem }) => {
-  console.log(item, 'in modal');
   return (
     <Modal 
     isOpen={modalState}

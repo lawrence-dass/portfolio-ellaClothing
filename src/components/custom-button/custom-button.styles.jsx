@@ -28,6 +28,7 @@ const googleButtonStyles = css`
     background-color: #4285f4;
     color: whitesmoke;
     margin-left: 1.5rem;
+    border: none;
 
     &:hover {
       background-color: #357ae8;

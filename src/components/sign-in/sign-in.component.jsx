@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import { ReactComponent as GoogleSignInIcon } from '../../assets/google.svg'
+
 import FormInput from '../form-input/form-input.component';
 import CustomButton from './../custom-button/custom-button.component';
 
@@ -12,7 +14,8 @@ import {
 import {
   SignInContainer,
   SignInTitle,
-  ButtonsBarContainer
+  ButtonsBarContainer,
+  GoogleSignInContainer
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
@@ -42,7 +45,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           name="email"
           value={email}
           handleChange={handleChange}
-          label="email"
+          label="Email"
           required
         />
         <FormInput
@@ -50,7 +53,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           name="password"
           value={password}
           handleChange={handleChange}
-          label="password"
+          label="Password"
           required
         />
         <ButtonsBarContainer>
@@ -59,9 +62,10 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
             type="button"
             onClick={googleSignInStart}
             isGoogleSignIn
-          >
-            {' '}
-            Sign In With Google{' '}
+          > 
+            <GoogleSignInContainer>
+              <GoogleSignInIcon /> <span> Sign In  </span> 
+            </GoogleSignInContainer>
           </CustomButton>
         </ButtonsBarContainer>
       </form>

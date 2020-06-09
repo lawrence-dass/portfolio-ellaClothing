@@ -14,3 +14,13 @@ export const ButtonsBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const GoogleSignInContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & span {
+    padding-left: 10px;
+  }
+`;
