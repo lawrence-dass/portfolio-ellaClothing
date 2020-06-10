@@ -42,7 +42,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       )}
       <CartIcon />
     </OptionsContainer>
-    {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
 
