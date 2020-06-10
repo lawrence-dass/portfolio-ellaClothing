@@ -4,7 +4,6 @@ import { createStructuredSelector } from 'reselect';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCurrentUser } from '../../redux/user/user.selector';
 import { selectCartHidden } from '../../redux/cart/cart.selector';
 import { signOutStart } from '../../redux/user/user.action';

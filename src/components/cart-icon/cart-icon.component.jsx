@@ -18,13 +18,11 @@ const CartIcon = ({toggleCartHidden, itemCount}) => {
 
 
   const openModal = () => {
-    console.log('closeModal t')
     setModalState(true)
   }
 
 
   const closeModal = () => {
-    console.log('closeModal t')
     setModalState(false);
   }
   return (

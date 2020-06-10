@@ -22,7 +22,6 @@ const ContactForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setMessageDetails({ ...messageDetails, [name]: value });
-    console.log('messageDetails', messageDetails)
   };
 
   return (
@@ -45,7 +44,7 @@ const ContactForm = () => {
           label="Email"
           required
         />
-        <textarea name="email" value={email} placeholder="Type your message here..." className="textarea"></textarea>
+        <textarea name="message" onChange={handleChange} value={message} placeholder="Type your message here..." className="textarea"></textarea>
         <div>
           <CustomButton type="submit"> Sign In </CustomButton>
         </div>
