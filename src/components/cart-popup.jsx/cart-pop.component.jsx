@@ -12,7 +12,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import './cart-pop.styles.scss';
 
 export const CartDropdownButton = styled(CustomButton)`
-  margin-top: auto;
+  margin: 0 auto;
 `;
 
 export const EmptyMessageContainer = styled.span`
@@ -21,7 +21,7 @@ export const EmptyMessageContainer = styled.span`
 `;
 
 export const CartItemsContainer = styled.div`
-  height: 240px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   overflow: scroll;
