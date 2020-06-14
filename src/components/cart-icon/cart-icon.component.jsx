@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { toggleCartHidden } from '../../redux/cart/cart.action';
 import { selectCartItemsCount } from '../../redux/cart/cart.selector';
 
 import CartPopup from '../cart-popup.jsx/cart-pop.component';
@@ -13,18 +12,17 @@ import {
   ItemCountContainer
 } from './cart-icon.styles';
 
-const CartIcon = ({toggleCartHidden, itemCount}) => {
+const CartIcon = ({itemCount}) => {
   const [ modalState, setModalState ] = React.useState(false);
-
 
   const openModal = () => {
     setModalState(true)
   }
 
-
   const closeModal = () => {
     setModalState(false);
   }
+  
   return (
     <div>
           <CartContainer onClick={() => openModal()}>
@@ -43,8 +41,4 @@ const mapStateToProps = createStructuredSelector({
   itemCount:  selectCartItemsCount
 })
 
-const mapDispatchToProps = dispatch => ({
-  toggleCartHidden: () => dispatch(toggleCartHidden())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
+export default connect(mapStateToProps)(CartIcon);

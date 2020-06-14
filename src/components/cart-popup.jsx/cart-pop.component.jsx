@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { toggleCartHidden } from '../../redux/cart/cart.action';
 import styled from 'styled-components';
 import { createStructuredSelector} from 'reselect';
 
@@ -28,8 +27,6 @@ export const CartItemsContainer = styled.div`
   flex-direction: column;
   overflow: scroll;
 `;
-
-
 
 const CartPopup = ({cartItems, modalState, closeModal, history }) => {
   return (
@@ -74,8 +71,5 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems
 });
 
-const mapDispatchToProps = dispatch => ({
-  toggleCartHidden: () => dispatch(toggleCartHidden())
-})
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartPopup));
+export default withRouter(connect(mapStateToProps)(CartPopup));
