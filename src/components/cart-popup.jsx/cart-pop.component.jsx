@@ -1,9 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { toggleCartHidden } from '../../redux/cart/cart.action';
 import styled from 'styled-components';
 import { createStructuredSelector} from 'reselect';
+
 
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../redux/cart/cart.selector';
@@ -29,7 +31,7 @@ export const CartItemsContainer = styled.div`
 
 
 
-const CartPopup = ({cartItems, dispatch, modalState, closeModal, toggleCartHidden }) => {
+const CartPopup = ({cartItems, modalState, closeModal, history }) => {
   return (
     <Modal 
     isOpen={modalState}
@@ -59,8 +61,8 @@ const CartPopup = ({cartItems, dispatch, modalState, closeModal, toggleCartHidde
       }
     </CartItemsContainer>
     <CartDropdownButton onClick={()=>{
-      // history.push('/checkout');
-      dispatch(toggleCartHidden());
+      closeModal()
+      history.push('/checkout');
       }}>
         GO TO CHECKOUT
       </CartDropdownButton>
@@ -76,4 +78,4 @@ const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartPopup);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartPopup));
