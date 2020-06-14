@@ -13,6 +13,12 @@ export const HeaderContainer = styled.div`
     padding: 10px;
     margin-bottom: 20px;
   }
+
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    width: 100%;
+    align-content: center;
+  }
 `;
 
 export const LogoContainer = styled(Link)`
@@ -28,6 +34,12 @@ export const LogoContainer = styled(Link)`
   @media screen and (max-width: 800px) {
     width: 50px;
     padding: 0;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    height: 70px;
+    justify-content: center;
   }
 `;
 
@@ -46,6 +58,10 @@ export const OptionsContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     width: 80%;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
   }
 `;
 

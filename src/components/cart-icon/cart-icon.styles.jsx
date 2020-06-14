@@ -10,6 +10,12 @@ export const CartContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media screen and (max-width: 400px) {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
 `;
 
 export const ShoppingIcon = styled(ShoppingIconSVG)`
