@@ -8,6 +8,7 @@ import {
   ModalContainer,
   ModalCloseButton,
   ImageContainer,
+  ItemName,
 } from './item-preview.styles';
 
 const ItemPreview = ({ item, modalState, closeModal, addItem }) => (
@@ -18,6 +19,7 @@ const ItemPreview = ({ item, modalState, closeModal, addItem }) => (
     ariaHideApp={false}
   >
     <ModalCloseButton onClick={() => closeModal()}> &#10005; </ModalCloseButton>
+    <ItemName> {item.name}</ItemName>
     <ImageContainer src={item.imageUrl} alt="" />
     <AddButton onClick={() => addItem(item)} inverted>
       {' '}
