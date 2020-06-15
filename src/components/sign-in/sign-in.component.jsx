@@ -14,7 +14,7 @@ import {
   SignInTitle,
   ButtonsBarContainer,
   GoogleSignInContainer,
-  GoogleSignInIcon
+  GoogleSignInIcon,
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
@@ -61,9 +61,10 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
             type="button"
             onClick={googleSignInStart}
             isGoogleSignIn
-          > 
+          >
             <GoogleSignInContainer>
-              <GoogleSignInIcon className="googleSignInIcon" /> <span> Sign In  </span> 
+              <GoogleSignInIcon className="googleSignInIcon" />{' '}
+              <span> Sign In </span>
             </GoogleSignInContainer>
           </CustomButton>
         </ButtonsBarContainer>

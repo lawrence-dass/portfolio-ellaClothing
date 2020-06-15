@@ -1,6 +1,13 @@
 import React from 'react';
 
-import { ContactContentContainer, ContactContentBlock, ContactImage, TwitterIcon, IngtagramIcon, GmailIcon } from './contact-content.styles';
+import {
+  ContactContentContainer,
+  ContactContentBlock,
+  ContactImage,
+  TwitterIcon,
+  IngtagramIcon,
+  GmailIcon,
+} from './contact-content.styles';
 
 const ContactContent = () => (
   <ContactContentContainer>

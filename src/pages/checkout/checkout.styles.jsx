@@ -16,7 +16,7 @@ export const CheckoutPageContainer = styled.div`
     width: 90%;
     height: 100%;
     margin: 7rem auto 0;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 `;
 

@@ -12,8 +12,6 @@ const IconCommonStyle = css`
   cursor: pointer;
 `;
 
-
-
 export const ContactContentContainer = styled.div`
   width: 50%;
   text-align: center;

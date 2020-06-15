@@ -8,8 +8,8 @@ import { ContactContainer } from './contact.styles';
 const Contact = () => (
   <ContactContainer>
     <ContactContent />
-    <ContactForm /> 
+    <ContactForm />
   </ContactContainer>
-)
+);
 
 export default Contact;

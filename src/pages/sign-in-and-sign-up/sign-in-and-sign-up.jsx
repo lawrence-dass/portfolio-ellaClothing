@@ -10,6 +10,6 @@ const SignInAndSignUpPage = () => (
     <SignIn />
     <SignUp />
   </SignInAndSignUpContainer>
-)
+);
 
 export default SignInAndSignUpPage;

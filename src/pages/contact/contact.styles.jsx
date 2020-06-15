@@ -8,4 +8,4 @@ export const ContactContainer = styled.div`
     display: block;
     height: 100%;
   }
-`
+`;

@@ -3,17 +3,19 @@ import React, { useState } from 'react';
 import FormInput from './../form-input/form-input.component';
 import CustomButton from './../custom-button/custom-button.component';
 
-import { ContactFormContainer, Textarea, FormContainer } from './contact-form.styles';
+import {
+  ContactFormContainer,
+  Textarea,
+  FormContainer,
+} from './contact-form.styles';
 
 const ContactForm = () => {
-  const [ messageDetails , setMessageDetails ] = useState({
+  const [messageDetails, setMessageDetails] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const { name, email, message } = messageDetails;
-
-
 
   const handleSubmit = () => {};
 
@@ -24,7 +26,11 @@ const ContactForm = () => {
 
   return (
     <ContactFormContainer>
-      <h2> Please send us your query through below form and we'll get back to you within 3 working days. </h2>
+      <h2>
+        {' '}
+        Please send us your query through below form and we'll get back to you
+        within 3 working days.{' '}
+      </h2>
       <FormContainer onSubmit={handleSubmit}>
         <FormInput
           type="text"
@@ -42,7 +48,12 @@ const ContactForm = () => {
           label="Email"
           required
         />
-        <Textarea name="message" onChange={handleChange} value={message} placeholder="Type your message here..."></Textarea>
+        <Textarea
+          name="message"
+          onChange={handleChange}
+          value={message}
+          placeholder="Type your message here..."
+        ></Textarea>
         <div>
           <CustomButton type="submit"> Sign In </CustomButton>
         </div>

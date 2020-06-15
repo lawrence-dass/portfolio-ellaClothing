@@ -9,4 +9,4 @@ export const HomePageContainer = styled.div`
   @media screen and (max-width: 400px) {
     padding: 1rem 2rem;
   }
-`
+`;

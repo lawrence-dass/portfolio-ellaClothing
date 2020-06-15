@@ -8,12 +8,12 @@ export const fetchCollectionsStart = () => ({
 });
 
 export const fetchCollectionsSuccess = (collectionsMap) => ({
-  type : shopActionTypes.FETCH_COLLECTION_SUCCESS,
+  type: shopActionTypes.FETCH_COLLECTION_SUCCESS,
   payload: collectionsMap
 })
 
 export const fetchCollectionsFailure = (errMessage) => ({
-  type : shopActionTypes.FETCH_COLLECTION_FAILURE,
+  type: shopActionTypes.FETCH_COLLECTION_FAILURE,
   payload: errMessage
 })
 
@@ -22,7 +22,7 @@ export const fetchCollectionsStartAsync = () => {
   return dispatch => {
     const collectionRef = firestore.collection('collections');
     dispatch(fetchCollectionsStart());
-    collectionRef.get().then( snapshot => {
+    collectionRef.get().then(snapshot => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
       dispatch(fetchCollectionsSuccess(collectionsMap));
     }).catch((err) => dispatchEvent(fetchCollectionsFailure(err.message)))

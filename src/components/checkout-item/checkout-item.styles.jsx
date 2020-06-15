@@ -10,7 +10,7 @@ export const CheckoutItemContainer = styled.div`
   align-items: center;
 
   @media screen and (max-width: 600px) {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -26,7 +26,7 @@ export const ImageContainer = styled.div`
 export const TextContainer = styled.span`
   width: 23%;
   @media screen and (max-width: 600px) {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 `;
 
