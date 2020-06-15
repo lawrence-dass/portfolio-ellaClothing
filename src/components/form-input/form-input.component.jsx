@@ -15,8 +15,7 @@ const FormInput = ({ handleChange, label, ...otherProps }) => (
           otherProps.value.length ? 'shrink' : ''
         } form-input-label`}
       >
-        {' '}
-        {label}{' '}
+        {label}
       </FormInputLabel>
     ) : null}
   </GroupContainer>

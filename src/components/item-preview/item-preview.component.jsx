@@ -22,8 +22,7 @@ const ItemPreview = ({ item, modalState, closeModal, addItem }) => (
     <ItemName> {item.name}</ItemName>
     <ImageContainer src={item.imageUrl} alt="" />
     <AddButton onClick={() => addItem(item)} inverted>
-      {' '}
-      Add to cart{' '}
+      Add to cart
     </AddButton>
   </ModalContainer>
 );

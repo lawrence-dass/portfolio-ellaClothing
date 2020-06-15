@@ -27,9 +27,8 @@ const ContactForm = () => {
   return (
     <ContactFormContainer>
       <h2>
-        {' '}
         Please send us your query through below form and we'll get back to you
-        within 3 working days.{' '}
+        within 3 working days.
       </h2>
       <FormContainer onSubmit={handleSubmit}>
         <FormInput

@@ -63,7 +63,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
             isGoogleSignIn
           >
             <GoogleSignInContainer>
-              <GoogleSignInIcon className="googleSignInIcon" />{' '}
+              <GoogleSignInIcon className="googleSignInIcon" />
               <span> Sign In </span>
             </GoogleSignInContainer>
           </CustomButton>
