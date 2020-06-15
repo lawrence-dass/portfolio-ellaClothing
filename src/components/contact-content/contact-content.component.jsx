@@ -1,18 +1,11 @@
 import React from 'react';
 
-import { ContactContentContainer } from './contact-content.styles';
-
-import { ReactComponent as ContactImg } from '../../assets/contact_us.svg';
-import { ReactComponent as TwitterIcon } from '../../assets/twitter.svg';
-import { ReactComponent as IngtagramIcon } from '../../assets/instagram.svg';
-import { ReactComponent as GmailIcon } from '../../assets/gmail.svg';
-
-import './contact-content.styles.scss';
+import { ContactContentContainer, ContactContentBlock, ContactImage, TwitterIcon, IngtagramIcon, GmailIcon } from './contact-content.styles';
 
 const ContactContent = () => (
   <ContactContentContainer>
-    <div className="content">
-      <ContactImg className="contact-img" />
+    <ContactContentBlock>
+      <ContactImage />
 
       <h1> How to find us </h1>
       <p>
@@ -30,11 +23,11 @@ const ContactContent = () => (
         feedback cause we care about you views and take them seriously.
       </p>
       <div>
-        <TwitterIcon className="contact-icon" />
-        <GmailIcon className="contact-icon" />
-        <IngtagramIcon className="contact-icon" />
+        <TwitterIcon />
+        <GmailIcon />
+        <IngtagramIcon />
       </div>
-    </div>
+    </ContactContentBlock>
   </ContactContentContainer>
 );
 

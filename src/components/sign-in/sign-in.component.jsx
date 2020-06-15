@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { ReactComponent as GoogleSignInIcon } from '../../assets/google.svg'
-
 import FormInput from '../form-input/form-input.component';
 import CustomButton from './../custom-button/custom-button.component';
-
-import './sign-in.styles.scss';
 
 import {
   googleSignInStart,
@@ -17,7 +13,8 @@ import {
   SignInContainer,
   SignInTitle,
   ButtonsBarContainer,
-  GoogleSignInContainer
+  GoogleSignInContainer,
+  GoogleSignInIcon
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {

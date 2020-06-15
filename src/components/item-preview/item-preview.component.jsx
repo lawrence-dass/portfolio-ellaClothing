@@ -1,25 +1,22 @@
 import React from 'react';
-import Modal from 'react-modal';
 import { connect } from 'react-redux';
 
-import './item-preview.scss';
 import { addItem } from '../../redux/cart/cart.action';
 
-import { AddButton } from './item-preview.styles';
+import { AddButton, ModalContainer, ModalCloseButton, ImageContainer } from './item-preview.styles';
 
 const ItemPreview = ({item, modalState, closeModal, addItem }) => {
   return (
-    <Modal 
+    <ModalContainer 
     isOpen={modalState}
     contentLabel="Modal Label"
     onRequestClose={closeModal}
     ariaHideApp={false}
-    className="modal-content"
  >
-<span className="cross-btn" onClick={() => closeModal()}> &#10005; </span>
-<img className="modal-img" src={item.imageUrl} alt="" width="100%"/>
+<ModalCloseButton onClick={() => closeModal()}> &#10005; </ModalCloseButton>
+<ImageContainer src={item.imageUrl} alt="" />
 <AddButton onClick={() => addItem(item)}inverted> Add to cart </AddButton>
-</Modal>
+</ModalContainer>
   )
 }
 

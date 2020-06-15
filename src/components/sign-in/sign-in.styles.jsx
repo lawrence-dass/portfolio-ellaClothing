@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ReactComponent as googleSignInIcon } from '../../assets/google.svg';
+
 export const SignInContainer = styled.div`
   width: 380px;
   display: flex;
@@ -19,7 +21,7 @@ export const ButtonsBarContainer = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 600px) {
-    justify-content: center;
+    justify-content: center
   }
 
 `;
@@ -32,4 +34,9 @@ export const GoogleSignInContainer = styled.div`
   & span {
     padding-left: 10px;
   }
+`;
+
+export const GoogleSignInIcon = styled(googleSignInIcon)`
+  width: 35px;
+  height: 35px;
 `;
