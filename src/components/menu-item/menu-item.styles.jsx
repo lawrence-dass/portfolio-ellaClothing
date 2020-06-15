@@ -9,11 +9,13 @@ export const MenuItemContainer = styled.div`
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
+  overflow: hidden;
+
   &:hover {
     cursor: pointer;
     & .background-image {
       transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
     & .content {
       opacity: 0.9;

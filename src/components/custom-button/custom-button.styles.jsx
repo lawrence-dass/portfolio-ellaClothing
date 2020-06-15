@@ -31,7 +31,7 @@ const googleButtonStyles = css`
     border: none;
 
     &:hover {
-      background-color: #55aef4;
+      background-color: #63b1f3;
       border: none;
     }
 `;
