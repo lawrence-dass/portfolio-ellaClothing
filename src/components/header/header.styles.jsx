@@ -62,6 +62,7 @@ export const OptionsContainer = styled.div`
 
   @media screen and (max-width: 400px) {
     width: 100%;
+    margin: 1rem 0 2rem 0;
   }
 `;
 

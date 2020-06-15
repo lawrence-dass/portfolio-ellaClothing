@@ -1,9 +1,33 @@
 .cross-btn {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 15px;
+  top: 7.5px;
+
+  @media screen and (max-width: 600px) {
+    top: 5px;
+    right: 10px;
+  }
 }
 
 .modal-img {
-  padding-top: 30px;
+  padding: 2rem;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-image:
+  linear-gradient(to bottom, rgba(245, 246, 252, 0.96), rgba(131, 67, 115, 0.93)),url('https://images.unsplash.com/photo-1574634534894-89d7576c8259?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');
+  width: 70%;
+  height: 90%;
+  overflow: scroll;
+  padding-bottom: 1rem;
+  
+  @media screen and (max-width: 600px) {
+    top: 50%;
+    width: 80%;
+    height: 65%;
+  }
 }

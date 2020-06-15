@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCartItemsCount } from '../../redux/cart/cart.selector';
 
-import CartPopup from '../cart-popup.jsx/cart-pop.component';
+import CartPopup from '../cart-popup/cart-pop.component';
 
 
 import {

@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const CollectionPageContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 6rem;
+  }
 `;
 
 export const CollectionTitle = styled.h2`
@@ -16,5 +20,10 @@ export const CollectionItemsContainer = styled.div`
   grid-gap: 10px;
   & > div {
     margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
   }
 `;

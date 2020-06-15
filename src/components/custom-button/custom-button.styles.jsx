@@ -49,7 +49,7 @@ export const CustomButtonContainer = styled.button`
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
+  padding: 0 35px;
   font-size: 15px;
   text-transform: uppercase;
   font-family: inherit;
@@ -57,6 +57,12 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 600px) {
+    padding: 0 5px;
+    min-width: 140px;
+    margin: 0 auto;
+  }
 
   ${getButttonStyles}
 `;

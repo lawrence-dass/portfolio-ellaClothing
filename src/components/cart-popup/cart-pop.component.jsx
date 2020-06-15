@@ -36,17 +36,18 @@ const CartPopup = ({cartItems, modalState, closeModal, history }) => {
     onRequestClose={closeModal}
     overlayClassName="modalOverlay"
     ariaHideApp={false}
+    className="cardModal-content"
     style={{
      content: {
-       position: 'absolute',
-       top: '280px',
-       left: '1220px',
-       margin: '0 auto',
-       transform: 'translate(-50%,-50%)',
-       backgroundImage:
-       "linear-gradient(to bottom, rgba(245, 246, 252, 0.96), rgba(131, 67, 115, 0.93)),url('https://images.unsplash.com/photo-1574634534894-89d7576c8259?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80')",
-       width: '300px',
-       height: '50%'
+      //  position: 'absolute',
+      //  top: '280px',
+      //  left: '1220px',
+      //  margin: '0 auto',
+      //  transform: 'translate(-50%,-50%)',
+      //  backgroundImage:
+      //  "linear-gradient(to bottom, rgba(245, 246, 252, 0.96), rgba(131, 67, 115, 0.93)),url('https://images.unsplash.com/photo-1574634534894-89d7576c8259?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80')",
+      //  width: '300px',
+      //  height: '50%'
      }
    }}
  >

@@ -11,6 +11,13 @@ export const CheckoutPageContainer = styled.div`
     margin-left: auto;
     margin-top: 50px;
   }
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+    height: 100%;
+    margin: 7rem auto 0;
+    font-size: .8rem;
+  }
 `;
 
 export const CheckoutHeaderContainer = styled.div`

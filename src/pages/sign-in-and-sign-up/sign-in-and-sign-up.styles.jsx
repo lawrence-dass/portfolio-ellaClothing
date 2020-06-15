@@ -6,4 +6,13 @@ export const SignInAndSignUpContainer = styled.div`
   justify-content: space-between;
   margin: 30px auto;
   height: 100vh;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+    height: 100%;
+    margin: 6rem auto;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+  }
 `;

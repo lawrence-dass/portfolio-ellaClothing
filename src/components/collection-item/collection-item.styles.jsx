@@ -31,6 +31,11 @@ export const CollectionItemContainer = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const AddButton = styled(CustomButton)`
