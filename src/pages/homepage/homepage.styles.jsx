@@ -5,6 +5,7 @@ export const HomePageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 80px;
+  height: calc(100vh - 180px);
 
   @media screen and (max-width: 400px) {
     padding: 1rem 2rem;
