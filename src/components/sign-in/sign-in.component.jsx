@@ -15,6 +15,7 @@ import {
   ButtonsBarContainer,
   GoogleSignInContainer,
   GoogleSignInIcon,
+  DemoLoginLink,
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
@@ -27,6 +28,11 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     emailSignInStart(email, password);
+  };
+
+  const handleDemoLogin = async (event) => {
+    event.preventDefault();
+    emailSignInStart('test@test.com', 'test123');
   };
 
   const handleChange = (event) => {
@@ -69,6 +75,10 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           </CustomButton>
         </ButtonsBarContainer>
       </form>
+      <p>
+        For demo login please click
+        <DemoLoginLink onClick={handleDemoLogin}> here</DemoLoginLink>.
+      </p>
     </SignInContainer>
   );
 };

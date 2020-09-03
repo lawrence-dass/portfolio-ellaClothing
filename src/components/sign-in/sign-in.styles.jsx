@@ -39,3 +39,8 @@ export const GoogleSignInIcon = styled(googleSignInIcon)`
   width: 35px;
   height: 35px;
 `;
+
+export const DemoLoginLink = styled.span`
+  color: blue;
+  cursor: pointer;
+`;
