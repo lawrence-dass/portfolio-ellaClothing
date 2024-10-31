@@ -1,45 +1,47 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
 import 'firebase/auth';
 
 const config = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
-}
+  apiKey: "AIzaSyB76K1CG3HY41lwY_O9niwJxzRGnpgOZRA",
+  authDomain: "crown-clothing-db-6efef.firebaseapp.com",
+  projectId: "crown-clothing-db-6efef",
+  storageBucket: "crown-clothing-db-6efef.firebasestorage.app",
+  messagingSenderId: "244957313054",
+  appId: "1:244957313054:web:10be73a8b1b76694ce160f",
+  measurementId: "G-NDN0H4P1ZS"
+};
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if (!userAuth) return;
+  // if (!userAuth) return;
 
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
-  const snapShot = await userRef && userRef.get();
+  // const userRef = firestore.doc(`users/${userAuth.uid}`);
+  // const snapShot = await userRef && userRef.get();
 
-  if (!snapShot.exists) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
+  // if (!snapShot.exists) {
+  //   const { displayName, email } = userAuth;
+  //   const createdAt = new Date();
 
-    try {
-      await userRef.set({
-        displayName,
-        email,
-        createdAt,
-        ...additionalData
-      })
+  //   try {
+  //     await userRef.set({
+  //       displayName,
+  //       email,
+  //       createdAt,
+  //       ...additionalData
+  //     })
 
-    } catch (error) {
-      console.log('error while creating an user', error.message);
-    }
-  }
-  return userRef;
+  //   } catch (error) {
+  //     console.log('error while creating an user', error.message);
+  //   }
+  // }
+  // return userRef;
 }
 
 
-firebase.initializeApp(config);
+const app = initializeApp(config);
+const db = getFirestore(app);
 
 export const convertCollectionsSnapshotToMap = collections => {
   const transformedCollections = collections.docs.map(doc => {
@@ -60,22 +62,14 @@ export const convertCollectionsSnapshotToMap = collections => {
 };
 
 export const getCurrentUser = () => {
-  return new Promise((resolve, reject) => {
-    const unsubscribe = auth.onAuthStateChanged(userAuth => {
-      unsubscribe();
-      resolve(userAuth);
-    }, reject)
-  })
+  // return new Promise((resolve, reject) => {
+  //   const unsubscribe = auth.onAuthStateChanged(userAuth => {
+  //     unsubscribe();
+  //     resolve(userAuth);
+  //   }, reject)
+  // })
 }
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
 
 
-export const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-googleProvider.setCustomParameters({ prompt: 'select_account' });
-
-export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
-
-export default firebase;

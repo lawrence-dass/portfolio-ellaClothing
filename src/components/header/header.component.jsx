@@ -23,7 +23,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       <LogoText>ella</LogoText>
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink exact={true} activeClassName="is-active" to="/">
+      <OptionLink exact='true' activeClassName="is-active" to="/">
         HOME
       </OptionLink>
       <OptionLink activeClassName="is-active" to="/shop">

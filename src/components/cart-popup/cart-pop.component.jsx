@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { createStructuredSelector } from 'reselect';
 
@@ -62,4 +61,4 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
-export default withRouter(connect(mapStateToProps)(CartPopup));
+export default connect(mapStateToProps)(CartPopup);

@@ -1,5 +1,5 @@
 import React, { useEffect, lazy, Suspense } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
@@ -20,15 +20,17 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
   return (
     <ShopContainer>
       <Suspense>
+        <Routes>
         <Route
           exact
-          path={`${match.path}`}
-          component={CollectionsOverviewContainer}
+          index
+          element={<CollectionsOverviewContainer />}
         />
-        <Route
-          path={`${match.path}/:collectionId`}
-          component={CollectionsPageContainer}
-        />
+        {/* <Route
+          path={`/:collectionId`}
+          element={CollectionsPageContainer}
+        /> */}
+        </Routes>
       </Suspense>
     </ShopContainer>
   );
