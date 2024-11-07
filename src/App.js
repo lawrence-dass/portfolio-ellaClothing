@@ -29,30 +29,29 @@ const CollectionsPageContainer = lazy(() =>
 );
 
 const App = ({ checkUserSession, currentUser }) => {
-  // useEffect(() => {
-  //   checkUserSession();
-  // }, [checkUserSession])
+  useEffect(() => {
+    checkUserSession();
+  }, [checkUserSession])
 
-    return (
-      <div>
-            <GlobalStyle />
-            <Header />
-   <Suspense fallback={<Spinner />}>
-           <ErrorBoundary>
-        <Routes>
-          <Route path="/" exact='true' element={<HomePage />} />
-              <Route path='/shop/*' element={<ShopPage />} />
-
+  return (
+    <div>
+      <GlobalStyle />
+      <Header />
+      <Suspense fallback={<Spinner />}>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" exact='true' element={<HomePage />} />
+            <Route path='/shop/*' element={<ShopPage />} />
             <Route path='/contact' element={<Contact />} />
             <Route exact path='/checkout' element={<CheckoutPage />} />
-            <Route exact path='/signin' element={false ? <Navigate to='/' /> : <SignInAndSignUpPage />} />
-        </Routes>
+            <Route exact path='/signin' element={currentUser ? <Navigate to='/' /> : <SignInAndSignUpPage />} />
+          </Routes>
         </ErrorBoundary>
-           <Footer />
+        <Footer />
       </Suspense>
-      </div>
+    </div>
   );
-  
+
   return (
     <div>
       <GlobalStyle />
@@ -61,12 +60,12 @@ const App = ({ checkUserSession, currentUser }) => {
       <Routes>
         {/*  <Route path=":id" element={<UserProfile />} /> */}
         {/* <Suspense fallback={<Spinner />}> */}
-        
-        <Route path="/" exact='true' element={ () => (
+
+        <Route path="/" exact='true' element={() => (
           // <Suspense fallback={<Spinner />}>
-          <HomePage/>
+          <HomePage />
           // </Suspense>
-        ) } />
+        )} />
         {/* <Route path='/shop' element={<ShopPage />} />
             <Route path='/contact' element={<Contact />} />
             <Route exact path='/checkout' element={<CheckoutPage />} />

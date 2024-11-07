@@ -8,12 +8,11 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 import { CollectionOverviewContainer } from './collection-overview.styles';
 
 const CollectionOverview = ({ collections }) => (
-  // <CollectionOverviewContainer>
-  //   {collections.map(({ id, ...otherCollectionProps }) => (
-  //     <CollectionPreview key={id} {...otherCollectionProps} />
-  //   ))}
-  // </CollectionOverviewContainer>
-  <div> Shop </div>
+  <CollectionOverviewContainer>
+    {collections.map(({ id, ...otherCollectionProps }) => (
+      <CollectionPreview key={id} {...otherCollectionProps} />
+    ))}
+  </CollectionOverviewContainer>
 );
 
 const mapStateToProps = createStructuredSelector({

@@ -1,5 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
 
 import 'firebase/auth';
 
@@ -41,10 +43,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 
 const app = initializeApp(config);
-const db = getFirestore(app);
+export const firestoreDB = getFirestore(app);
 
-export const convertCollectionsSnapshotToMap = collections => {
-  const transformedCollections = collections.docs.map(doc => {
+export const convertCollectionsSnapshotToMap = async collections => {
+  const transformedCollections = await collections.docs.map(doc => {
     const { title, items } = doc.data();
 
     return {
@@ -61,15 +63,19 @@ export const convertCollectionsSnapshotToMap = collections => {
   }, {})
 };
 
+export const auth = getAuth();
+
 export const getCurrentUser = () => {
-  // return new Promise((resolve, reject) => {
-  //   const unsubscribe = auth.onAuthStateChanged(userAuth => {
-  //     unsubscribe();
-  //     resolve(userAuth);
-  //   }, reject)
-  // })
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject)
+  })
 }
 
+
+export const googleProvider = new GoogleAuthProvider();
 
 
 

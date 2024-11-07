@@ -74,7 +74,7 @@ export const OptionLink = styled(NavLink)`
     color: rgba(117, 19, 93);
   }
 
-  &.${(props) => props.activeClassName} {
+  &.${(props) => props.activeclassname} {
     color: blue;
     font-size: 1.01rem;
   }

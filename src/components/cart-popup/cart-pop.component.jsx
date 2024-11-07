@@ -9,6 +9,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import { ModalContainer, ModalCloseButton } from './cart-pop.styles';
 
 import './cart-pop.styles.scss';
+import { useNavigate } from 'react-router-dom';
 
 export const CartDropdownButton = styled(CustomButton)`
   margin: 0 auto;
@@ -26,36 +27,39 @@ export const CartItemsContainer = styled.div`
   overflow: scroll;
 `;
 
-const CartPopup = ({ cartItems, modalState, closeModal, history }) => (
-  <ModalContainer
-    isOpen={modalState}
-    contentLabel="Modal Label"
-    onRequestClose={closeModal}
-    overlayClassName="modalOverlay"
-    ariaHideApp={false}
-  >
-    <ModalCloseButton className="cross-btn" onClick={() => closeModal()}>
-      &#10005;
-    </ModalCloseButton>
-    <CartItemsContainer>
-      {cartItems.length ? (
-        cartItems.map((cartItem) => (
-          <CartItem key={cartItem.id} item={cartItem} />
-        ))
-      ) : (
-        <EmptyMessageContainer> Your cart is empty! </EmptyMessageContainer>
-      )}
-    </CartItemsContainer>
-    <CartDropdownButton
-      onClick={() => {
-        closeModal();
-        history.push('/checkout');
-      }}
+const CartPopup = ({ cartItems, modalState, closeModal, history }) => {
+  const navigate = useNavigate()
+  return (
+    <ModalContainer
+      isOpen={modalState}
+      contentLabel="Modal Label"
+      onRequestClose={closeModal}
+      overlayClassName="modalOverlay"
+      ariaHideApp={false}
     >
-      GO TO CHECKOUT
-    </CartDropdownButton>
-  </ModalContainer>
-);
+      <ModalCloseButton className="cross-btn" onClick={() => closeModal()}>
+        &#10005;
+      </ModalCloseButton>
+      <CartItemsContainer>
+        {cartItems.length ? (
+          cartItems.map((cartItem) => (
+            <CartItem key={cartItem.id} item={cartItem} />
+          ))
+        ) : (
+          <EmptyMessageContainer> Your cart is empty! </EmptyMessageContainer>
+        )}
+      </CartItemsContainer>
+      <CartDropdownButton
+        onClick={() => {
+          closeModal();
+          navigate('/checkout');
+        }}
+      >
+        GO TO CHECKOUT
+      </CartDropdownButton>
+    </ModalContainer>
+  )
+};
 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,

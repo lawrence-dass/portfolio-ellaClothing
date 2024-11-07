@@ -1,6 +1,6 @@
 import shopActionTypes from './shop.types';
 
-import { convertCollectionsSnapshotToMap } from '../../firebase/firebase.util';
+import { convertCollectionsSnapshotToMap, firestoreDB } from '../../firebase/firebase.util';
 
 
 export const fetchCollectionsStart = () => ({
@@ -19,13 +19,13 @@ export const fetchCollectionsFailure = (errMessage) => ({
 
 // thunk capture this and processes it // thunk captures the function (actually anything), the let the object go to reducer.
 export const fetchCollectionsStartAsync = () => {
-  // return dispatch => {
-  //   const collectionRef = firestore.collection('collections');
-  //   dispatch(fetchCollectionsStart());
-  //   collectionRef.get().then(snapshot => {
-  //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-  //     dispatch(fetchCollectionsSuccess(collectionsMap));
-  //   }).catch((err) => dispatchEvent(fetchCollectionsFailure(err.message)))
+  return async dispatch => {
+    const collectionRef = await firestoreDB.collection('collections');
+    dispatch(fetchCollectionsStart());
+    collectionRef.get().then(snapshot => {
+      const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+      dispatch(fetchCollectionsSuccess(collectionsMap));
+    }).catch((err) => dispatchEvent(fetchCollectionsFailure(err.message)))
 
-  // }
+  }
 };
