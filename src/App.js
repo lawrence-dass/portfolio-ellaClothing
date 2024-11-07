@@ -21,13 +21,6 @@ const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up'));
 const Contact = lazy(() => import('./pages/contact/contact.component'));
 
-const CollectionsOverviewContainer = lazy(() =>
-  import('./components/collection-overview/collection-overview.container')
-);
-const CollectionsPageContainer = lazy(() =>
-  import('./pages/collection/collection.container')
-);
-
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
     checkUserSession();
@@ -51,31 +44,6 @@ const App = ({ checkUserSession, currentUser }) => {
       </Suspense>
     </div>
   );
-
-  return (
-    <div>
-      <GlobalStyle />
-      <Header />
-      {/* <ErrorBoundary> */}
-      <Routes>
-        {/*  <Route path=":id" element={<UserProfile />} /> */}
-        {/* <Suspense fallback={<Spinner />}> */}
-
-        <Route path="/" exact='true' element={() => (
-          // <Suspense fallback={<Spinner />}>
-          <HomePage />
-          // </Suspense>
-        )} />
-        {/* <Route path='/shop' element={<ShopPage />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route exact path='/checkout' element={<CheckoutPage />} />
-            <Route exact path='/signin' render={() => currentUser ? <Navigate to='/' /> : <SignInAndSignUpPage />} /> */}
-        {/* </Suspense> */}
-      </Routes>
-      {/* </ErrorBoundary> */}
-      {/* <Footer /> */}
-    </div>
-  );
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -87,27 +55,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-// import React, { Suspense, lazy } from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-// // Lazy load your components
-// const Home = lazy(() => import('./components/Home'));
-// // const About = lazy(() => import('./components/About'));
-// // const NotFound = lazy(() => import('./components/NotFound'));
-
-// function App() {
-//   return (
-
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           {/* <Route path="/about" element={<About />} />
-//           <Route path="*" element={<NotFound />} /> */}
-//         </Routes>
-//       </Suspense>
-//   );
-// }
-
-// export default App;
