@@ -1,10 +1,10 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 
-import { convertCollectionsSnapshotToMap, firestoreDB } from '../../firebase/firebase.util';
+import { firestoreDB } from '../../firebase/firebase.util';
 import { fetchCollectionsSuccess, fetchCollectionsFailure } from './shop.actions';
 
 import shopActionTypes from './shop.types';
-import { getDoc, collection, getDocs } from 'firebase/firestore';
+import {collection, getDocs } from 'firebase/firestore';
 
 export function* fetchCollectionsAsync() {
 
