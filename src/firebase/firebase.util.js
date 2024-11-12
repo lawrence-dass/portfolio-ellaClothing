@@ -6,14 +6,14 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import 'firebase/auth';
 
 const config = {
-  apiKey: "AIzaSyB76K1CG3HY41lwY_O9niwJxzRGnpgOZRA",
-  authDomain: "crown-clothing-db-6efef.firebaseapp.com",
-  projectId: "crown-clothing-db-6efef",
-  storageBucket: "crown-clothing-db-6efef.firebasestorage.app",
-  messagingSenderId: "244957313054",
-  appId: "1:244957313054:web:10be73a8b1b76694ce160f",
-  measurementId: "G-NDN0H4P1ZS"
-};
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+}
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   // if (!userAuth) return;
