@@ -3,8 +3,8 @@ import Modal from 'react-modal';
 
 export const ModalContainer = styled(Modal)`
   position: absolute;
-  top: 280px;
-  left: 1220px;
+  top: 15em;
+  right: -5em;
   margin: 0 auto;
   transform: translate(-50%, -50%);
   background-image: linear-gradient(
